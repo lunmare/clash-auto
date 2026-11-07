@@ -12,11 +12,9 @@ https://raw.githubusercontent.com/lunmare/clash-auto/refs/heads/main/Clash-Auto.
 
 ## 基础配置与 DNS
 
-`Clash-Auto.ini` 通过 `clash_rule_base=` 引用同仓库的 [Clash-Base.yaml](Clash-Base.yaml)。使用支持该字段的 Subconverter 兼容转换器时，加载基础配置，再生成节点、策略组和规则；总模板入口仍为上面的 INI 地址。
+[Clash-Base.yaml](Clash-Base.yaml) 单独保留为 SublinkPro 的 YAML 基础模板，包含端口、Fake-IP 和国内外 DoH 分流设置。使用时将其内容填入 Pro 的基础模板，再导入 `Clash-Auto.ini` 生成规则和策略组。
 
-基础配置沿用原有端口 7890/7891、局域网访问和 9090 控制接口；启用 Fake-IP、`respect-rules: true`，国内及私有域名用腾讯/阿里 DoH，`geolocation-!cn` 域名用 Cloudflare/Google DoH，节点域名单独用腾讯/阿里 DoH。这些 geosite 分类需要客户端具备对应的 GeoSite 数据。
-
-**SublinkPro 兼容性限制：** 当前上游 INI 导入只读取 `ruleset=` 与 `custom_proxy_group=`，不会加载 `clash_rule_base=`。在其转换器增加支持之前，仅导入此 INI 不能自动应用 DNS；可将 `Clash-Base.yaml` 内容用作它的 YAML 基础模板，再导入 INI。OpenClash 如启用 DNS 覆写，最终运行值还取决于客户端覆写设置。
+`Clash-Auto.ini` 只负责规则和策略组，不包含基础 YAML 引用。GeoSite DNS 分类需要客户端具备相应数据；OpenClash 如启用 DNS 覆写，最终运行值取决于客户端覆写设置。
 
 ## 上游及分工
 
