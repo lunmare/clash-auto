@@ -1,11 +1,11 @@
 # Clash Auto
 
-沿用 `Clash-LIAN.ini` 总模板格式。以 ACL4SSR 的基础分流思路为骨架，直接引用多个维护活跃、拥有数千至数万 Star 的项目；不再人工整理、复制或提交域名清单。
+使用 `Clash-Auto.ini` 作为总模板文件名，沿用原有 INI 结构。以 ACL4SSR 的基础分流思路为骨架，直接引用多个维护活跃、拥有数千至数万 Star 的项目；不再人工整理、复制或提交域名清单。
 
 ## 模板地址
 
 ```text
-https://raw.githubusercontent.com/lunmare/clash-auto/refs/heads/main/Clash-LIAN.ini
+https://raw.githubusercontent.com/lunmare/clash-auto/refs/heads/main/Clash-Auto.ini
 ```
 
 在 SublinkPro 的规则配置导入处使用此地址。转换器需要支持 `clash-domain:`、`clash-ipcidr:`、`clash-classic:`。保持 INI 总模板和地区节点组，AI、流媒体等可分别选择出口。
